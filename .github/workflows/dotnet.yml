@@ -22,11 +22,13 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Discord Commits
-      uses: Sniddl/discord-commits@v1.3
+    - name: Discord Notifier
+      uses: fateyan/action-discord-notifier@v1.2.0
       with:
-        webhook: fZyXG25Z00L_ZMrcEpgJyhWfxMJe4w_qLHwR0HQ7c2uSW2NmfOJz5Y64-oMM8OuFJHmx
-        message: "Start Build"
+    # A full discord webhook url
+        webhook: https://discord.com/api/webhooks/928949454780919809/fZyXG25Z00L_ZMrcEpgJyhWfxMJe4w_qLHwR0HQ7c2uSW2NmfOJz5Y64-oMM8OuFJHmx 
+    # Message title
+        message-title: HELLO
 
     - name: Build
       run: dotnet build --no-restore
