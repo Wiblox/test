@@ -34,3 +34,6 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+       # We will output publish files to the folder we previously created
+    - name: Publish
+      run: dotnet publish -c Release -o /app
