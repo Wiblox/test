@@ -10,7 +10,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest,windows-latest]
+        os: [ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
 
@@ -22,6 +22,12 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
+    - name: Discord Commits
+      uses: Sniddl/discord-commits@v1.3
+      with:
+        webhook: fZyXG25Z00L_ZMrcEpgJyhWfxMJe4w_qLHwR0HQ7c2uSW2NmfOJz5Y64-oMM8OuFJHmx
+        message: "Start Build"
+
     - name: Build
       run: dotnet build --no-restore
     - name: Test
