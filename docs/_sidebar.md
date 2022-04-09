@@ -5,4 +5,6 @@
   - [Guide](guide.md)
   - ds
 - R
-  - [Guide](guide.md)
+  - [Guide](Guide.md)
+  - s
+
